@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<meta charset="utf-8">
+		 <!-- Bootstrap CSS -->
+   	 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+
+   	 	<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+		<script type="text/javascript">
+			//Função para iniciar o jogo apartir de um nivel de dificuldade
+			function iniciarJogo(){
+				var nivel = document.getElementById('nivel').value
+				if (nivel === '' || nivel ===null){
+					alert('Selecione um Nivel')
+					return false
+				}
+
+				//APLICANDO NIVEL DE DIFICULDADE NA APLICAÇÃO
+				//? vai separar a variavel do link do nivel - NÃO É UM METODO CONVENCIONAL 
+				window.location.href = "app.html?" + nivel
+			}
+		</script>
+		
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<img src="imagens/game.png">
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<div class="mb-3">
+							<select class="form-control" id="nivel">
+								<option value="">-- Selecione o nivel --</option>
+								<option value="normal">Normal</option>
+								<option value="dificil">Dificil</option>
+								<option value="jonhwick">Jonh Wick</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center">
+						<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">
+							Iniciar Jogo
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
